@@ -1,0 +1,407 @@
+<section class="section first">
+    <div class="header">  
+        <div class="p-2 flex-grow-1 bd-highlight">
+            <button class="btn btn-sm connect" *ngIf="!userAccountAddress" (click)="connectWallet(isWalletConnected)">Connect Wallet</button>
+            <p *ngIf="userAccountAddress">{{userAccountAddress}}</p>
+        </div>
+        <div [@openClose]="isHamburguer ? 'open' : 'closed'"  class="popup">
+            <div class="row">
+                <div class="logo1">
+                    <a href="#">
+                        <img class="img-fluid" src="../../assets/images/DoughLogo4.png" alt="">
+                    </a>
+                </div>
+                <div class="links">
+                    <h2 class="text-center quicklink"> Quick Links</h2>
+                    <div class="row row1">
+                        <div class="col-6 col1"><a href="#">Contract</a></div>
+                        <div class="col-6 col2">BSCSCAN</div>
+                    </div> 
+                    <div class="row row2">
+                        <div class="col-6 col1"><a href="#">Chart</a></div>
+                        <div class="col-6 col2">DEXTOOLS</div>
+                    </div> 
+                    <div class="row row3">
+                        <div class="col-6 col1"><a href="#">Buy</a></div>
+                        <div class="col-6 col2">PANCAKESWAP</div>
+                    </div> 
+                </div>
+                <div class="info">
+                    <h2 class="text-center quicklink" (click)="scroll(howto)">Rewards</h2>
+                    <h2 class="text-center quicklink" (click)="scroll(howto)">How to Buy</h2>
+                    <h2 class="text-center quicklink" (click)="scroll(tokendetail)">Tokenomics</h2>
+                    <h2 class="text-center quicklink" (click)="scroll(roadmap)">Roadmap</h2>
+                </div>
+                <div class="socialicons_section">
+                    <h2 class="socialtext">Socials</h2>
+                    <div class="row ">
+                        <div class="col socialicons">
+                           <a href="">
+                            <img class="img-fluid" src="../../assets/images/telegram.svg" alt="">
+                           </a>
+                        </div>
+                        <div class="col">
+                            <a href="">
+                                <img class="img-fluid" src="../../assets/images/twitter.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-2 bd-highlight" (click)="openMenu()">
+            <img class="img-fluid hamburger" [src]="image" alt=""> 
+           <!--  <img *ngIf="isMenu" class="img-fluid" src="../../assets/images/cross.svg" alt="">  -->
+        </div>
+        
+    </div>
+    <div class="doughimage">
+        <img class="tasty" src="../../assets/images/Tasty.svg" alt="">
+        <div class="sidepanel" [ngClass]="panel ? 'openPanel' : 'closepanel'">
+           <div class="sidepanelimage">
+                <div class="sidepaneltext st1">
+                   <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                       <div class="col">
+                        <p><u>Holdings</u></p> 
+                       </div>
+                       <div class="col sidedough">
+                        <p>{{doughCount}} Dough</p>
+                       </div>
+                   </div>
+                </div>  
+                <div class="sidepaneltext st2">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p><u>Received</u></p> 
+                        </div>
+                        <div class="col">
+                         <p class="sidecake">{{cakeCount}} cake</p>
+                        </div>
+                    </div>
+                 </div>  
+                 <div class="sidepaneltext st3">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p> </p> 
+                        </div>
+                        <div class="col">
+                         <p class="sidecake">10 300 Dough</p>
+                        </div>
+                    </div>
+                 </div> 
+                 <div class="sidepaneltext st4">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p><u>24h Volume</u> </p> 
+                        </div>
+                        <div class="col">
+                         <p class="sidecake">1000,000 $</p>
+                        </div>
+                    </div>
+                 </div>  
+                 <div class="sidepaneltext st5">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p><u>Holders</u> </p> 
+                        </div>
+                        <div class="col">
+                         <p class="sidecake">2500  &nbsp;</p>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="sidepaneltext st6">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p><u>Total Rewards Paid to Holders</u> </p> 
+                        </div>
+                    </div>
+                 </div> 
+                 <div class="sidepaneltext st7">
+                    <div class="row d-inline-flex px-4 sidepaneltext_row1">
+                        <div class="col">
+                         <p>&nbsp; 50000</p> 
+                        </div>
+                    </div>
+                 </div>
+                 <div class="sidepaneltexticon st8">
+                    <div class="row d-inline-flex px-4 ">
+                        <div class="col">
+                            <a (click)="openPanel()">
+                                <img [ngClass]="panel ? 'polygonopen' : 'polygonclose'" src="../../assets/images/Polygon7.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                 </div>   
+                <img src="../../assets/images/Group6.svg" alt="">
+            </div>
+        </div>
+        <img class="img-fluid headerimage"  src="../../assets/images/Doughcartoonbackground.png" alt="dough image" >
+        <img class="topping1" src="../../assets/images/milkpng.png" alt="">
+
+    </div>
+</section>
+<section class="section second" #howto>
+    <div class="d-flex flex-column flex-sm-row justify-content-around align-items-center">
+        <div class="bd-highlight align-items-center howtosection">
+            <p class="howto">How </p>
+            <p class="howto">to</p>
+            <p class="buy">Buy</p>
+            <button class="btn swap-btn">DOUGH<span class="sup">&trade;</span> SWAP</button>
+            <div class="items">
+                <li>Rewards are paid every 24 hours</li>
+                <li>Selling cancels your rewards for 24 hours</li>
+                <li>Max wallet is 1% of supply</li>
+            </div>
+           
+        </div>
+        
+        <!-- <div class="order-sm-first bd-highlight tokenContainerParent">
+            <div class="container tokenContainer">
+                <div class="row align-items-center text-center">
+                    <div class="col-4">
+                        <p class="text1">Dough</p>
+                        <p class="text2">Swap</p>
+                        <p class="text3">Trade tokens in an instant</p>
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid doughlogo2" src="../../assets/images/DoughLogo2.svg" alt="dough logo2">
+                    </div>
+                    <div class="col-4">
+                        <img class="img-fluid settingicon" src="../../assets/images/Setting.svg" alt="setting icon">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container inputrow">   
+                        <p class="balance">Balance: 2.13</p>
+                         <div class="input-group">
+                            <input type="number" class="form-control bnbinput" value="0.0" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary max" type="button">MAX</button>    
+                                  <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+                                    <button class="btn btn-outline-primary mr-2 bnbdropdown" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">
+                                        <img src="../../assets/images/binancelogo.svg" alt="binance logo">
+                                        BNB
+                                    </button>
+                                    <div class="bnbdropdownpanel" ngbDropdownMenu aria-labelledby="dropdownManual">
+                                      <button ngbDropdownItem>BNB</button>
+                                      <button ngbDropdownItem>BNB</button>
+                                      <button ngbDropdownItem>BNB</button>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div> 
+                    </div>
+                </div>
+                <div class="row arrow_down d-flex align-items-center justify-content-center my-2">
+                    <img  src="../../assets/images/arrow_down.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="container inputrow">   
+                        <p class="balance">-</p>
+                         <div class="input-group">
+                            <input type="number" class="form-control bnbinput" value="0.0" aria-label="Text input with dropdown button">
+                            <div class="input-group-append">
+                                  <div class="d-inline-block currencydropdownpanel" ngbDropdown #myDrop2="ngbDropdown">
+                                    <button class="btn btn-outline-primary mr-2 bnbdropdown" id="dropdownManual2" ngbDropdownAnchor (focus)="myDrop2.open()">
+                                        Select a currency
+                                    </button>
+                                    <div class="bnbdropdownpanel" ngbDropdownMenu aria-labelledby="dropdownManual2">
+                                      <button ngbDropdownItem>BNB</button>
+                                      <button ngbDropdownItem>BNB</button>
+                                      <button ngbDropdownItem>BNB</button>
+                                    </div>
+                                  </div>
+                            </div>
+                          </div> 
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center my-4">
+                    <button class="btn btn-primary btn-lg amountbutton">ENTER AN AMOUNT</button>
+                </div>
+            </div>
+            <div class="text-center ultext my-2">
+                    <li>Rewards are paid every 24 hours</li>
+                    <li>Selling cancels your rewards for 24 hours</li>
+            </div>
+        </div> -->
+    </div>
+</section>
+<section class="section third" #tokendetail>
+    <img class="img-fluid topping3" src="../../assets/images/milkpng.png" alt="">
+    <div class="passive-container">
+        <p class="passivetext">
+            <span class="p1">P</span>
+            <span class="a1">A</span>
+            <span class="s1">S</span>
+            <span class="s2">S</span>
+            <span class="i1">I</span>
+            <span class="v1">V</span>
+            <span class="e1">E</span>
+            <span class="space1">&nbsp;</span>
+            <span class="space1">&nbsp;</span>
+            <span class="i2">I</span>
+            <span class="n1">N</span>
+            <span class="c1">C</span>
+            <span class="o1">O</span>
+            <span class="m1">M</span>
+            <span class="e2">E</span>
+        </p>
+        <p class="doughText">Dough</p>
+        <div class="container my-5" >
+            <div class="row">
+                <div class="col-md d-flex flex-column justify-content-center align-items-center">
+                    <div class="row firstcol">
+                        <img class="img-fluid" src="../../assets/images/Rectangle.svg" alt="">
+                        <div class="row align-items-center tokenomics">
+                            <h1>Tokenomics</h1>
+                            <div class="d-flex justify-content-end">
+                                <p class="mx-4"><u>BUY</u></p>
+                                <p><u>SELL</u></p>
+                            </div>
+                            <div class="d-flex bd-highlight">
+                                <div class="px-3 flex-grow-1 bd-highlight text-start">Liquidity</div>
+                                <div class="px-2 bd-highlight mx-3">4<span class="percentage">%</span></div>
+                                <div class="px-2 bd-highlight">4<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight">
+                                <div class="px-3 flex-grow-1 bd-highlight text-start">Marketing</div>
+                                <div class="px-2 bd-highlight mx-3">1<span class="percentage">%</span></div>
+                                <div class="px-2 bd-highlight">4<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight">
+                                <div class="px-3 flex-grow-1 bd-highlight text-start">Burn</div>
+                                <div class="px-2 bd-highlight mx-3">0<span class="percentage">%</span></div>
+                                <div class="px-2 bd-highlight">2<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight">
+                                <div class="px-3 flex-grow-1 bd-highlight text-start">Rewards</div>
+                                <div class="px-2 bd-highlight mx-2">10<span class="percentage">%</span></div>
+                                <div class="px-2 bd-highlight">10<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight caketext">
+                                <div class="px-5 flex-grow-1 bd-highlight text-start">Cake</div>
+                                <div class="px-2 bd-highlight mx-3">0<span class="percentage">-</span>10<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight caketext">
+                                <div class="px-5 flex-grow-1 bd-highlight text-start">Dough</div>
+                                <div class="px-2 bd-highlight mx-3">0<span class="percentage">-</span>10<span class="percentage">%</span></div>
+                            </div>
+                             <div class="d-flex bd-highlight">
+                                <div class="px-3 flex-grow-1 bd-highlight text-start"><u>Total</u></div>
+                                <div class="px-2 bd-highlight mx-2">15<span class="percentage">%</span></div>
+                                <div class="px-2 bd-highlight">20<span class="percentage">%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row doughlogo3">
+                        <img class="img-fluid" src="../../assets/images/DoughLogo3.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-md secondcol">
+                    <div class="row">
+                        <div class="row d-flex justify-content-around">
+                            <div class="col text-start contract">
+                                Contract
+                            </div>
+                            <div class="col text-end pancake">
+                                BSCSCAN
+                            </div>
+                       </div>
+                       <div class="row d-flex justify-content-around">
+                            <div class="col text-start contract">
+                            
+                                Chart
+                            </div>
+                            <div class="col text-end pancake">
+                                DEXTOOLS
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-around">
+                            <div class="col text-start contract">
+                            
+                                Buy
+                            </div>
+                            <div class="col text-end pancake">
+                                PANCAKESWAP
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-4 pancaketext">
+                        <p class="text-left">Reward tokens tend to have a strong selling pressure; due to the Contract selling 4x for Rewards.</p>
+                    </div>
+                    <div class="row pancaketext">
+                        <p class="text-left"><span class="cake">Dough</span> brings you a unique and very tasty recipe which has never been done before!</p>
+                    </div>
+                    <div class="row my-4 pancaketext">
+                        <p class="text-left">When the chart is green you will receive <span class="cake">Cake</span> rewards when the chart is red you receive more <span class="cake">Dough</span></p>
+                    </div>
+                </div>
+                <div class="col-md" #roadmap>
+                    <img class="pgna d-none d-sm-block" src="../../assets/images/pgna.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="wrapper" >
+        <div class="box-area box-left">
+            <div class="custom"></div>
+                <div class="box-date first-box-date">
+                 <span></span>
+                </div>
+                <div class="box-text box-text-right translatedown">
+                 <h2 class="d-inline-flex">FAIR LAUNCH  </h2>  <span class="d-none d-sm-block">------------</span>
+                </div>
+            
+        </div>
+        <div class="box-area box-right">
+            <div class="custom">  </div>
+                <div class="box-date translateup">
+                    <span></span>
+                </div>
+                <div class="box-text box-text-left translateup5">
+                    <span class="d-none d-sm-block">---------- </span> <h2 class="d-inline-flex text-center"> INFLUENCER <br> MARKETING</h2>
+             </div>
+          
+        </div>
+        <div class="box-area box-left">
+            <div class="custom"></div>
+                <div class="box-date translateup2">
+                    <span></span>
+                </div>
+                <div class="box-text box-text-right translateup6">
+                    <h2 class="d-inline-flex">CMC AND CG </h2><span class="d-none d-sm-block">------------</span>
+             </div>
+            
+        </div>
+        <div class="box-area box-right">
+            <div class="custom"></div>
+                <div class="box-date translateup3">
+                    <span></span>
+                </div>
+                <div class="box-text box-text-left translateup7">
+                    <span class="d-none d-sm-block">-----------</span>  <h2 class="d-inline-flex text-center">   EXCHANGE <br> LISTING</h2>
+             </div>
+            
+        </div>
+        <div class="box-area box-left" >
+            <div class="custom" ></div>
+                <div class="box-date translateup4" style="background: none;">
+                    
+                    <span></span>
+                </div>
+                <div class="box-text box-text-right translateup8">
+                    <h2 class="d-inline-flex text-center">LAUNCH <br> RECIPE BOOK </h2>    <span class="d-none d-sm-block">------------</span>     
+             </div>
+           
+        </div>
+        
+        </div> 
+    
+   </div>
+</section>
+
+<footer class="sticky-bottom">
+            <img class="img-fluid w-100" src="../../assets/images/Wheat.png" alt="wheat image">   
+</footer>
+
+
+ 
