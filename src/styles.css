@@ -917,7 +917,7 @@ span {
         width: 20%;
     }
     .second {
-        margin-top: 6rem !important;
+        margin-top: 0 !important;
     }
     .connect{
         width: 30% !important;
