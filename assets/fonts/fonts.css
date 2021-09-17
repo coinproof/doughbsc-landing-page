@@ -1,0 +1,16 @@
+@font-face {
+    font-family: CreamCake;
+    src: url("./CreamCake.otf") format("opentype");
+}
+@font-face {
+    font-family: KGTangledUpInYou;
+    src: url("./KGTangledUpInYou.ttf") format("trueType");
+}
+@font-face {
+    font-family: KGTangledUpInYou2;
+    src: url("./KGTangledUpInYou2.ttf") format("trueType");
+}
+@font-face {
+    font-family: Helvetica Neue Medium Extended;
+    src: url("./HelveticaNeueMediumExtended/HelveticaNeueMediumExtended.otf") format("openType");
+}
