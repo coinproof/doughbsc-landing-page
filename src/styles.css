@@ -1228,8 +1228,8 @@ span {
     position: absolute;
     top: 2px;
     left: 2px;
-    background: #27ae60;
-    background: linear-gradient(to bottom, #27ae60 0%, #145b32 100%);
+    background: #785123;
+    background: linear-gradient(to bottom, #EDC683 0%, #966e2e 100%);
     opacity: 0;
     border-radius: 50px;
     box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
@@ -1256,4 +1256,6 @@ span {
 
   .roadmap-milestones .subtext {
     font-size: 18px;
+    list-style-type:none;
+    line-height: 14px;
   }
